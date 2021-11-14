@@ -25,9 +25,9 @@ Program se spouští v následující podobě: (./pwcheck značí umístění a 
 
 Program je spouštěn se dvěma pevně zadanými argumenty LEVEL a PARAM a s jedním volitelným argumentem --stats, případně zadaným na třetí pozici:
 
-LEVEL - celé číslo v intervalu [1, 4], které určuje požadovanou úroveň bezpečnosti (viz níže)<br />
-PARAM - kladné celé číslo, které určuje dodatečný parametr pravidel (viz níže)<br />
---stats - pokud je zadané, určuje, zda se na konci programu mají vypsat souhrnné statistiky analyzovaných hesel
+<strong>LEVEL</strong> - celé číslo v intervalu [1, 4], které určuje požadovanou úroveň bezpečnosti (viz níže)<br />
+<strong>PARAM</strong> - kladné celé číslo, které určuje dodatečný parametr pravidel (viz níže)<br />
+<strong>--stats</strong> - pokud je zadané, určuje, zda se na konci programu mají vypsat souhrnné statistiky analyzovaných hesel
 
 ### Úrovně bezpečnosti (kontrolovaná pravidla)
 
