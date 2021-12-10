@@ -85,6 +85,37 @@ int find_character_in_array(char c, char array[])
 }
 
 /**
+ * checks if a character is lowercase
+ * 
+ * @param c character to classify
+ * @return TRUE when character c is lowercase, otherwise FALSE
+ */
+int is_lower(char c)
+{
+	if (c >= 'a' && c <= 'z') {
+		return TRUE;
+	}
+
+	return FALSE;
+}
+
+/**
+ * checks if a character is uppercase
+ * 
+ * @param c character to classify 
+ * @return TRUE when character c is uppercase, otherwise FALSE
+ */
+int is_upper(char c)
+{
+	if (c >= 'A' && c <= 'Z') {
+		return TRUE;
+	}
+
+	return FALSE;
+}
+
+
+/**
  * @param stats structure we want inicialized
  * @return inicialized stats to default values
  */
@@ -95,32 +126,6 @@ Stats intialized_stats(Stats stats){
 	stats.total_number_of_characters = 0.0;
 
 	return stats;
-}
-
-/**
- * load password by characters
- * 
- * @param c first character of the password
- * @param password place where to load password
- * @return pointer to the loaded password
- */
-char* get_password(int c, char *password)
-{
-	password[0] = (char)c;
-    int i;
-
-	// read all characters up to '\n'
-    for (i = 1; c != '\n'; i++){
-		if (i > MAX){
-			return NULL;
-		}
-        c = getchar();
-        password[i] = (char)c;
-	}
-	// end string with '\0' and exculde '\n'
-	password[i - 1] = '\0';
-
-	return password;
 }
 
 /**
@@ -156,6 +161,30 @@ Stats load_stats(Stats stats, char *password)
 }
 
 /**
+ * load password by characters
+ * 
+ * @param c first character of the password
+ * @param password place where to load password
+ * @return pointer to the loaded password
+ */
+char* get_password(int c, char *password)
+{
+	password[0] = (char)c;
+    int i;
+    for (i = 1; c != '\n'; i++){
+		if (i > MAX){
+			return NULL;
+		}
+        c = getchar();
+        password[i] = (char)c;
+	}
+	// end string with '\0' and exculde '\n'
+	password[i - 1] = '\0';
+
+	return password;
+}
+
+/**
  * check whether password contains at least one lower-case and one upper-case letter
  * 
  * @param password string
@@ -168,14 +197,13 @@ int check1(char *password)
 	int password_length = string_length(password);
 
 	for (int i = 0; i < password_length; i++){
-		// check whether character is lower-case
-		if (password[i] >= 'a' && password[i] <= 'z'){
+		if (is_lower(password[i])){
 			lower_case_letters = 1;
 		}
-		// check whether character is upper-case
-		else if (password[i] >= 'A' && password[i] <= 'Z'){
+		else if (is_upper(password[i])){
 			upper_case_letters = 1;
 		}
+		
 		// when both conditins are true, value TRUE is returned
 		if(lower_case_letters == 1 && upper_case_letters == 1){
 			return TRUE;
@@ -202,10 +230,10 @@ int check2(char *password, long param)
 
 	// decide in which group a character belongs
 	for (int i = 0; i < password_length; i++){
-		if (password[i] >= 'a' && password[i] <= 'z'){
+		if (is_lower(password[i])){
 			lower_case_letters = 1;
 		}
-		else if (password[i] >= 'A' && password[i] <= 'Z'){
+		else if (is_upper(password[i])){
 			upper_case_letters = 1;
 		}
 		else if (password[i] >= '0' && password[i] <= '9'){

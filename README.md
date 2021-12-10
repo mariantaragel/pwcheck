@@ -2,18 +2,6 @@
 
 9,8 / 10
 
-<strong>-0.2: opakovane ukoly by mely byt abstrahovany do pomocnych funkci</strong ><br />
-if (password[i] >= 'a' && password[i] <= 'z')   -> isLower(password[i])<br />
-if (password[i] >= 'A' && password[i] <= 'Z')   -> isUpper(password[i])
-
-<strong>-0.2: misty zcela zbytecne komentare</strong ><br />
-// read all characters up to '\n'<br />
-for (i = 1; c != '\n'; i++){<br /><br />
-// check whether character is lower-case<br />
-if (password[i] >= 'a' && password[i] <= 'z'){<br /><br />
-// check whether character is upper-case<br />
-else if (password[i] >= 'A' && password[i] <= 'Z'){
-
 ## Popis projektu
 
 Cílem projektu je vytvořit program, který na vstupu dostane sadu hesel a pro každé z nich ověří, jestli heslo splňuje všechna (pevně zadaná) požadovaná pravidla. Ta hesla, která projdou kontrolou, budou vypisována na výstup, ostatní budou zahozena.
