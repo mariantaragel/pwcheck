@@ -9,6 +9,7 @@ Cílem projektu je vytvořit program, který na vstupu dostane sadu hesel a pro 
 ## Detailní specifikace
 
 Vstupní data (seznam hesel) budou čtena ze standardního vstupu (stdin), výstup (filtrovaný seznam hesel) bude tisknut na standardní výstup (stdout).
+
 ### Překlad
 
 Program překládejte s následujícími argumenty:
