@@ -65,6 +65,29 @@ NCHARS - počet různých znaků vyskytujících se napříč všemi hesly<br />
 MIN - délka nejkratšího hesla (resp. hesel)<br />
 AVG - průměrná délka hesla (aritmetický průměr) zaokrouhlená na 1 desetiné místo
 
+## Implementační detaily
+
+### Vstupní data (seznam hesel)
+
+Seznam hesel je programu předán na standardním vstupu (stdin). Každé heslo je zadáno na samostatném řádku a obsahuje pouze ASCII textová data, kromě znaku nového řádku. Maximální délka hesla je 100 znaků, jinak se jedná o nevalidní data. Program musí podporovat neomezený počet hesel na vstupu.
+
+### Výstup programu
+
+Program na standardní výstup (stdout) vypisuje hesla ze vstupního seznamu, každé na samostatný řádek, která splňují požadovanou úroveň bezpečnosti zadanou jako argument programu LEVEL. Hesla musí být vypsána beze změny a ve stejném pořadí, v jakém se objevila na vstupu.
+
+Za výstupním seznamem hesel pak program volitelně vypisuje statistiku (viz. Statistiky).
+
+### Omezení v projektu
+
+Je zakázané použít následující funkce:
+
+<ul>
+    <li>volání funkcí z knihoven string.h a ctype.h - cílem projektu je naučit se implementovat dané funkce ručně</li>
+    <li>volání z rodiny malloc a free - práce s dynamickou pamětí není v tomto projektu zapotřebí</li>
+    <li>volání z rodiny fopen, fclose, fscanf, ... - práce se soubory (dočasnými) není v tomto projektu žádoucí</li>
+    <li>volání funkce exit</li>
+</ul>
+
 ## Příklady vstupů a výstupů
 
 Pomocný soubor se seznamem hesel:
