@@ -64,3 +64,55 @@ Prumerna delka: AVG
 NCHARS - počet různých znaků vyskytujících se napříč všemi hesly<br />
 MIN - délka nejkratšího hesla (resp. hesel)<br />
 AVG - průměrná délka hesla (aritmetický průměr) zaokrouhlená na 1 desetiné místo
+
+## Příklady vstupů a výstupů
+
+Pomocný soubor se seznamem hesel:
+
+```
+$ cat hesla.txt
+1234567890
+Password
+Heslo123
+Mojevelmidlouhehesloscislem0
+IZP2021:fit@vut.cz
+```
+
+Příklady spuštění:
+
+```
+./pwcheck 1 1 <hesla.txt
+Password
+Heslo123
+Mojevelmidlouhehesloscislem0
+IZP2021:fit@vut.cz
+```
+
+```
+./pwcheck 2 3 <hesla.txt
+Heslo123
+Mojevelmidlouhehesloscislem0
+IZP2021:fit@vut.cz
+```
+
+```
+./pwcheck 3 2 <hesla.txt
+Heslo123
+Mojevelmidlouhehesloscislem0
+IZP2021:fit@vut.cz
+```
+
+```
+./pwcheck 4 2 <hesla.txt
+Heslo123
+IZP2021:fit@vut.cz
+```
+
+```
+./pwcheck 2 4 --stats <hesla.txt
+IZP2021:fit@vut.cz
+Statistika:
+Ruznych znaku: 36
+Minimalni delka: 8
+Prumerna delka: 14.4
+```
